@@ -1,0 +1,26 @@
+{% if firstname and lastname and about %}
+Welcome <b>{{firstname}} {{lastname}}</b>!
+<p>{{about}}</p>
+
+<p>you can update below!</p>
+
+
+
+{% else %}
+Enter Your Name and About Below!
+
+{% endif %}
+
+
+<form method="POST">
+    {{form.hidden_tag()}}
+    {{form.firstname.label}}{{form.firstname()}}
+    <br>
+    {{form.lastname.label}}{{form.lastname()}}
+    <br>
+    {{form.about.label}}{{form.about()}}
+    <br>
+    {{form.submit()}}
+
+
+</form>
